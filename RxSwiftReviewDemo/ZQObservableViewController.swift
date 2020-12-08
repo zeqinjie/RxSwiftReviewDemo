@@ -24,13 +24,20 @@ class ZQObservableViewController: UIViewController {
         self.view.backgroundColor = .white
         let tap = UITapGestureRecognizer(target: self, action: #selector(viewTap))
         self.view.addGestureRecognizer(tap)
-        creatSignalUI()
+        ///  执行函数
+//        createObservable()
+//        createSingle()
+//        createCompletable()
+//        createMaybe()
+//        createDriverUI()
+//        createSignalUI()
+        creatControlEvent()
     }
 
     // MARK: - Action
     @objc fileprivate func viewTap() {
         view.endEditing(false)
-        signalTouch()
+//        signalTouch()
     }
     
     // MARK: - Observable
@@ -104,7 +111,14 @@ class ZQObservableViewController: UIViewController {
     
     // MARK: - Single
     //******* Single ******* //
-    func createSingle() {
+    /*
+     • 发出一个元素，或一个 error 事件。
+     • 不会共享附加作用
+     SingleObserver 在创建 create 函数中，返回一个 SingleObserver 类型闭包。
+     闭包需要传 SingleEvent 参数，只存在 success(Element) 和 error 事件（有点类似 Completable 的 CompletableObserver）
+     使用场景：常用于网络请求，对应答或者错误做出响应。
+     */
+    fileprivate func createSingle() {
         let single = createMySingle("0")
         single.subscribe { (json) in
             print("JSON结果: ", json)
@@ -118,7 +132,7 @@ class ZQObservableViewController: UIViewController {
         case cantParseJSON
     }
 
-    func createMySingle(_ channel: String) -> Single<[String: Any]> {
+    fileprivate func createMySingle(_ channel: String) -> Single<[String: Any]> {
         return Single<[String: Any]>.create { single in
             let url = "https://douban.fm/j/mine/playlist?"
                 + "type=n&channel=\(channel)&from=mainsite"
@@ -144,7 +158,15 @@ class ZQObservableViewController: UIViewController {
 
     // MARK: - Completable
     //******* Completable ******* //
-    func createCompletable() {
+    /*
+     • 不会发出元素
+     • 发出一个 completed 事件或者一个 error 事件
+     • 不会共享附加作用
+     Completable 在创建 create 函数中，返回一个 CompletableObserver 类型闭包。
+     闭包需要传 CompletableEvent 参数，只存在 error 和 completed 事件（有点类似 Signle 的 SingleObserver）
+     使用场景:一般用在不关心后端返回的结果，只在于发出请求。比如数据统计，数据缓存
+     */
+    fileprivate func createCompletable() {
         let completable = createMyCompletable()
         completable.subscribe {
             print("保存成功!")
@@ -159,7 +181,7 @@ class ZQObservableViewController: UIViewController {
         case failedCaching
     }
 
-    func createMyCompletable() -> Completable {
+    fileprivate func createMyCompletable() -> Completable {
         return Completable.create { completable in
             //将数据缓存到本地（这里掠过具体的业务代码，随机成功或失败）
             let success = (arc4random() % 2 == 0)
@@ -174,7 +196,10 @@ class ZQObservableViewController: UIViewController {
 
     // MARK: - Maybe
     //******* Maybe ******* //
-    func createMaybe() {
+    /* 发出一个元素或者一个 completed 事件或者一个 error 事件,不会共享附加作用
+     应用场景：可能需要发出一个元素，又可能不需要发出的情况。
+     */
+    fileprivate func createMaybe() {
         createMyMaybe().subscribe { (event) in
             print(event)
         }.disposed(by: disposeBag)
@@ -185,7 +210,7 @@ class ZQObservableViewController: UIViewController {
         case failedGenerate
     }
 
-    func createMyMaybe() -> Maybe<String> {
+    fileprivate func createMyMaybe() -> Maybe<String> {
         return Maybe<String>.create { maybe in
             maybe(.success("success"))
             maybe(.completed)
@@ -195,7 +220,12 @@ class ZQObservableViewController: UIViewController {
 
 
     // MARK: - Driver
-    fileprivate func creatDriverUI()  {
+    /* 与 UI 相关
+     • 不会产生 error 事件
+     • 一定在 MainScheduler 监听
+     • 共享附加作用
+     */
+    fileprivate func createDriverUI()  {
         let textField1 = UITextField()
         textField1.placeholder = "textField1"
         textField1.frame = CGRect(x: 10, y: 64, width: 100, height: 50)
@@ -246,9 +276,12 @@ class ZQObservableViewController: UIViewController {
         results1
             .drive(textField3.rx.text)
             .disposed(by: disposeBag)
+        
 
     }
 
+    
+    /// 获取数据
     fileprivate func fetchAutoCompleteItems(_ str: String?) -> Observable<String?> {
         return Observable.create { observer -> Disposable in
             observer.onNext(str)
@@ -258,20 +291,22 @@ class ZQObservableViewController: UIViewController {
     }
 
     // MARK: - Signal
+    /*
+     Signal 和 Driver 相似，唯一的区别是，Driver 会对新观察者回放（重新发送）上一个元素，而 Signal 不会对新观察者回放上一个元素
+     状态序列我们会选用 Driver 这个类型，事件序列我们会选用 Signal 这个类型
+     */
     fileprivate func signalTouch() {
         let observer: () -> Void = { self.showAlert("弹出提示框2") }
 //        driverEvent = button.rx.tap.asDriver()  /// 注意不能重新转换，会初始化新的 event
         driverEvent.drive(onNext:observer).disposed(by: disposeBag)
         signalEvent.emit(onNext:observer).disposed(by: disposeBag)
-        
     }
 
     fileprivate func showAlert(_ str: String) {
         print("弹出提示框 -- \(str)")
     }
-
     
-    fileprivate func creatSignalUI() {
+    fileprivate func createSignalUI() {
         let button: UIButton = UIButton(frame: CGRect(x: 10, y: 164, width: 100, height: 50))
         button.backgroundColor = UIColor.red
         self.button = button
@@ -284,6 +319,31 @@ class ZQObservableViewController: UIViewController {
 
         signalEvent = button.rx.tap.asSignal()
         signalEvent.emit(onNext: observer).disposed(by: disposeBag)
+    }
+    
+    // MARK: - ControlEvent
+    /*
+     ControlEvent 专门用于描述 UI 控件所产生的事件，它具有以下特征：
+     • 不会产生 error 事件
+     • 一定在 MainScheduler 订阅（主线程订阅）
+     • 一定在 MainScheduler 监听（主线程监听）
+     • 共享附加作用
+     */
+    
+    fileprivate func creatControlEvent()  {
+        /**
+            同样地，在 RxCocoa 下许多 UI 控件的事件方法都是被观察者（可观察序列）。
+            那么我们如果想实现当一个 button 被点击时，在控制台输出一段文字。即前者作为被观察者，后者作为观察者。可以这么写：
+         */
+        let btn:UIButton = UIButton.init(type: .custom)
+        btn.frame = CGRect(x: 30, y: 100, width: 50, height: 50)
+        btn.setTitle("点击", for: .normal)
+        btn.backgroundColor  = .red
+        self.view.addSubview(btn)
+        btn.rx.tap
+            .subscribe(onNext: {
+                print("欢迎")
+            }).disposed(by: disposeBag)
     }
     
 
