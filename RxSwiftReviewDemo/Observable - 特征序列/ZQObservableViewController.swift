@@ -62,6 +62,7 @@ class ZQObservableViewController: UIViewController {
             print(event)
         }.disposed(by: disposeBag)
         
+        
         /// of是创建一个sequence能发出很多种事件信号
         let ofObser = Observable.of("a", "b", "c")
         ofObser.subscribe { (event : Event<String>) in
@@ -276,7 +277,6 @@ class ZQObservableViewController: UIViewController {
         results1
             .drive(textField3.rx.text)
             .disposed(by: disposeBag)
-        
 
     }
 
@@ -340,10 +340,19 @@ class ZQObservableViewController: UIViewController {
         btn.setTitle("点击", for: .normal)
         btn.backgroundColor  = .red
         self.view.addSubview(btn)
-        btn.rx.tap
-            .subscribe(onNext: {
-                print("欢迎")
-            }).disposed(by: disposeBag)
+//        btn.rx.tap
+//            .subscribe(onNext: {
+//                print("欢迎")
+//            }).disposed(by: disposeBag)
+        
+        btn.rx.tap.subscribe { (event) in
+            print("欢迎")
+        } onError: { (error) in
+            print("error")
+        } onCompleted: {
+            print("onCompleted")
+        }.disposed(by: disposeBag)
+
     }
     
 

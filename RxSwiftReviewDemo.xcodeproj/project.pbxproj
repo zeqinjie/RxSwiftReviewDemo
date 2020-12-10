@@ -15,6 +15,8 @@
 		150799EC25628E8E005DBEF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 150799EA25628E8E005DBEF5 /* LaunchScreen.storyboard */; };
 		150799F725628E8F005DBEF5 /* RxSwiftReviewDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150799F625628E8F005DBEF5 /* RxSwiftReviewDemoTests.swift */; };
 		15079A0225628E8F005DBEF5 /* RxSwiftReviewDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15079A0125628E8F005DBEF5 /* RxSwiftReviewDemoUITests.swift */; };
+		15361D9F25805D3E008325FB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15361D9E25805D3D008325FB /* RootViewController.swift */; };
+		15EDFB7E258231F300537D31 /* ZQObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EDFB7D258231F300537D31 /* ZQObserverViewController.swift */; };
 		1805A49D2ED7477243578EFE /* Pods_RxSwiftReviewDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E69AE114B7F3BB8234F71BC /* Pods_RxSwiftReviewDemoTests.framework */; };
 		A134892D7FC159059E38079A /* Pods_RxSwiftReviewDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9069240FA0662A229968B52 /* Pods_RxSwiftReviewDemo.framework */; };
 		E6A46AFE3AB1A76A7048286B /* Pods_RxSwiftReviewDemo_RxSwiftReviewDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C12E1B36BD3AA86DE6B8FF26 /* Pods_RxSwiftReviewDemo_RxSwiftReviewDemoUITests.framework */; };
@@ -53,6 +55,8 @@
 		15079A0125628E8F005DBEF5 /* RxSwiftReviewDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwiftReviewDemoUITests.swift; sourceTree = "<group>"; };
 		15079A0325628E8F005DBEF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15079A1F2562924C005DBEF5 /* Playground - Observable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground - Observable.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		15361D9E25805D3D008325FB /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		15EDFB7D258231F300537D31 /* ZQObserverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQObserverViewController.swift; sourceTree = "<group>"; };
 		49EC978325ADE0B65186141C /* Pods-RxSwiftReviewDemo-RxSwiftReviewDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftReviewDemo-RxSwiftReviewDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftReviewDemo-RxSwiftReviewDemoUITests/Pods-RxSwiftReviewDemo-RxSwiftReviewDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4E69AE114B7F3BB8234F71BC /* Pods_RxSwiftReviewDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftReviewDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79835FC679D3CC2F314692EA /* Pods-RxSwiftReviewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftReviewDemo.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftReviewDemo/Pods-RxSwiftReviewDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,7 +123,9 @@
 			children = (
 				150799DF25628E8C005DBEF5 /* AppDelegate.swift */,
 				150799E125628E8C005DBEF5 /* SceneDelegate.swift */,
-				150799E325628E8C005DBEF5 /* ZQObservableViewController.swift */,
+				15361D9E25805D3D008325FB /* RootViewController.swift */,
+				15EDFB7C2582317100537D31 /* Observer - 响应事件 */,
+				15361DA325806116008325FB /* Observable - 特征序列 */,
 				15079A1F2562924C005DBEF5 /* Playground - Observable.playground */,
 				150799E525628E8C005DBEF5 /* Main.storyboard */,
 				150799E825628E8E005DBEF5 /* Assets.xcassets */,
@@ -145,6 +151,22 @@
 				15079A0325628E8F005DBEF5 /* Info.plist */,
 			);
 			path = RxSwiftReviewDemoUITests;
+			sourceTree = "<group>";
+		};
+		15361DA325806116008325FB /* Observable - 特征序列 */ = {
+			isa = PBXGroup;
+			children = (
+				150799E325628E8C005DBEF5 /* ZQObservableViewController.swift */,
+			);
+			path = "Observable - 特征序列";
+			sourceTree = "<group>";
+		};
+		15EDFB7C2582317100537D31 /* Observer - 响应事件 */ = {
+			isa = PBXGroup;
+			children = (
+				15EDFB7D258231F300537D31 /* ZQObserverViewController.swift */,
+			);
+			path = "Observer - 响应事件";
 			sourceTree = "<group>";
 		};
 		3B60962930863E2E1055D00F /* Frameworks */ = {
@@ -409,7 +431,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				150799E425628E8C005DBEF5 /* ZQObservableViewController.swift in Sources */,
+				15EDFB7E258231F300537D31 /* ZQObserverViewController.swift in Sources */,
 				150799E025628E8C005DBEF5 /* AppDelegate.swift in Sources */,
+				15361D9F25805D3E008325FB /* RootViewController.swift in Sources */,
 				150799E225628E8C005DBEF5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
