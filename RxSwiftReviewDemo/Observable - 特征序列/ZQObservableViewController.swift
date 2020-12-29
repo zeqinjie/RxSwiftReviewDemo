@@ -6,12 +6,9 @@
 //  特征序列
 
 import UIKit
-import RxSwift
-import RxCocoa
 
-class ZQObservableViewController: UIViewController {
+class ZQObservableViewController: BaseViewController {
 
-    let disposeBag = DisposeBag()
     
     /// Signal 部分
     var signalEvent: Signal<Void>!
@@ -21,7 +18,6 @@ class ZQObservableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
         let tap = UITapGestureRecognizer(target: self, action: #selector(viewTap))
         self.view.addGestureRecognizer(tap)
         ///  执行函数

@@ -6,14 +6,12 @@
 //
 
 import UIKit
-import RxCocoa
-import RxSwift
 
-class ZQObserverViewController: UIViewController {
+class ZQObserverViewController: BaseViewController {
 
     var label: UILabel!
     var button: UIButton!
-    let disposeBag = DisposeBag()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +22,6 @@ class ZQObserverViewController: UIViewController {
     }
     
     fileprivate func creatUI() {
-        view.backgroundColor = .white
         label = UILabel(frame: CGRect(x: 0, y: 100, width: view.frame.size.width, height: 20))
         view.addSubview(label)
         
