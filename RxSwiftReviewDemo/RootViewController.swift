@@ -18,6 +18,7 @@ fileprivate struct ListViewModel {
     let data = Observable<[ListModel]>.just([
         ListModel(className: ZQObservableViewController.self,name: "Observable - 序列特征"),
         ListModel(className: ZQObserverViewController.self,name: "Observer - 响应事件"),
+        ListModel(className: ZQSubjectsViewController.self,name: "Subject 既是可监听序列也是观察者"),
     ])
 }
 
