@@ -97,12 +97,12 @@ class ZQObserverViewController: BaseViewController {
 
 /// 扩展观察者属性
 /// 扩展 label 观察者属性
-extension Reactive where Base: UILabel {
-    
-    /// Bindable sink for `text` property.
-    public var text: Binder<String?> {
-        return Binder(self.base) { label, text in
-            label.text = text
-        }
-    }
-}
+//extension Reactive where Base: UILabel {
+//
+//    /// Bindable sink for `text` property.
+//    public var text: Binder<String?> {
+//        return Binder(self.base) { label, text in
+//            label.text = text
+//        }
+//    }
+//}
