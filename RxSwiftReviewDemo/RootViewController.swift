@@ -19,7 +19,7 @@ fileprivate struct ListViewModel {
         ListModel(className: ZQObservableViewController.self,name: "Observable - 序列特征"),
         ListModel(className: ZQObserverViewController.self,name: "Observer - 响应事件"),
         ListModel(className: ZQSubjectsViewController.self,name: "Subject 既是可监听序列也是观察者"),
-        ListModel(className: ZQOperatorViewController.self,name: "Operator - 操作符"),
+        ListModel(className: ZQOperatorTransformViewController.self,name: "Operator - 转换操作符"),
     ])
 }
 

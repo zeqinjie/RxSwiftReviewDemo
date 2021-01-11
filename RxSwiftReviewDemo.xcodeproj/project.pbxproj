@@ -17,7 +17,7 @@
 		15079A0225628E8F005DBEF5 /* RxSwiftReviewDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15079A0125628E8F005DBEF5 /* RxSwiftReviewDemoUITests.swift */; };
 		15361D9F25805D3E008325FB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15361D9E25805D3D008325FB /* RootViewController.swift */; };
 		15983C1C2592DA9700F72BDC /* ZQSubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15983C1B2592DA9700F72BDC /* ZQSubjectsViewController.swift */; };
-		15C010DA25A3129200B9EAFA /* ZQOperatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C010D925A3129200B9EAFA /* ZQOperatorViewController.swift */; };
+		15C010DA25A3129200B9EAFA /* ZQOperatorTransformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C010D925A3129200B9EAFA /* ZQOperatorTransformViewController.swift */; };
 		15CD6225259B2E2300D647EB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CD6224259B2E2300D647EB /* BaseViewController.swift */; };
 		15EDFB7E258231F300537D31 /* ZQObserverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EDFB7D258231F300537D31 /* ZQObserverViewController.swift */; };
 		1805A49D2ED7477243578EFE /* Pods_RxSwiftReviewDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E69AE114B7F3BB8234F71BC /* Pods_RxSwiftReviewDemoTests.framework */; };
@@ -60,7 +60,7 @@
 		15079A1F2562924C005DBEF5 /* Playground - Observable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground - Observable.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		15361D9E25805D3D008325FB /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		15983C1B2592DA9700F72BDC /* ZQSubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQSubjectsViewController.swift; sourceTree = "<group>"; };
-		15C010D925A3129200B9EAFA /* ZQOperatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQOperatorViewController.swift; sourceTree = "<group>"; };
+		15C010D925A3129200B9EAFA /* ZQOperatorTransformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQOperatorTransformViewController.swift; sourceTree = "<group>"; };
 		15CD6224259B2E2300D647EB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		15EDFB7D258231F300537D31 /* ZQObserverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQObserverViewController.swift; sourceTree = "<group>"; };
 		49EC978325ADE0B65186141C /* Pods-RxSwiftReviewDemo-RxSwiftReviewDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftReviewDemo-RxSwiftReviewDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftReviewDemo-RxSwiftReviewDemoUITests/Pods-RxSwiftReviewDemo-RxSwiftReviewDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 		15C010D025A3116200B9EAFA /* Operator - 操作符 */ = {
 			isa = PBXGroup;
 			children = (
-				15C010D925A3129200B9EAFA /* ZQOperatorViewController.swift */,
+				15C010D925A3129200B9EAFA /* ZQOperatorTransformViewController.swift */,
 			);
 			path = "Operator - 操作符";
 			sourceTree = "<group>";
@@ -457,7 +457,7 @@
 			files = (
 				150799E425628E8C005DBEF5 /* ZQObservableViewController.swift in Sources */,
 				15EDFB7E258231F300537D31 /* ZQObserverViewController.swift in Sources */,
-				15C010DA25A3129200B9EAFA /* ZQOperatorViewController.swift in Sources */,
+				15C010DA25A3129200B9EAFA /* ZQOperatorTransformViewController.swift in Sources */,
 				15983C1C2592DA9700F72BDC /* ZQSubjectsViewController.swift in Sources */,
 				150799E025628E8C005DBEF5 /* AppDelegate.swift in Sources */,
 				15361D9F25805D3E008325FB /* RootViewController.swift in Sources */,
