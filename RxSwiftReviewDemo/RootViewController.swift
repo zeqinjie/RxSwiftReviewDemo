@@ -20,6 +20,7 @@ fileprivate struct ListViewModel {
         ListModel(className: ZQObserverViewController.self,name: "Observer - 响应事件"),
         ListModel(className: ZQSubjectsViewController.self,name: "Subject 既是可监听序列也是观察者"),
         ListModel(className: ZQOperatorTransformViewController.self,name: "Operator - 转换操作符"),
+        ListModel(className: ZQOperatorCombineViewController.self,name: "Operator - 结合操作符"),
     ])
 }
 
@@ -44,6 +45,8 @@ class RootViewController: UIViewController {
                 self.navigationController?.pushViewController(lVC, animated: true)
             }
         }).disposed(by: disposeBag)
+        
+        
     }
     
 
