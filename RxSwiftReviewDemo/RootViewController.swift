@@ -21,6 +21,7 @@ fileprivate struct ListViewModel {
         ListModel(className: ZQSubjectsViewController.self,name: "Subject 既是可监听序列也是观察者"),
         ListModel(className: ZQOperatorTransformViewController.self,name: "Operator - 转换操作符"),
         ListModel(className: ZQOperatorCombineViewController.self,name: "Operator - 结合操作符"),
+        ListModel(className: ZQOperatorFilterViewController.self,name: "Operator - 过滤操作符"),
     ])
 }
 

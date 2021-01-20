@@ -16,6 +16,7 @@
 		150799F725628E8F005DBEF5 /* RxSwiftReviewDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150799F625628E8F005DBEF5 /* RxSwiftReviewDemoTests.swift */; };
 		15079A0225628E8F005DBEF5 /* RxSwiftReviewDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15079A0125628E8F005DBEF5 /* RxSwiftReviewDemoUITests.swift */; };
 		15361D9F25805D3E008325FB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15361D9E25805D3D008325FB /* RootViewController.swift */; };
+		155733AB25B13193000AC106 /* ZQOperatorFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155733AA25B13193000AC106 /* ZQOperatorFilterViewController.swift */; };
 		15983C1C2592DA9700F72BDC /* ZQSubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15983C1B2592DA9700F72BDC /* ZQSubjectsViewController.swift */; };
 		15A5BF6425AC5F240000A30F /* ZQOperatorCombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A5BF6325AC5F230000A30F /* ZQOperatorCombineViewController.swift */; };
 		15C010DA25A3129200B9EAFA /* ZQOperatorTransformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C010D925A3129200B9EAFA /* ZQOperatorTransformViewController.swift */; };
@@ -60,6 +61,7 @@
 		15079A0325628E8F005DBEF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15079A1F2562924C005DBEF5 /* Playground - Observable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground - Observable.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		15361D9E25805D3D008325FB /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		155733AA25B13193000AC106 /* ZQOperatorFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQOperatorFilterViewController.swift; sourceTree = "<group>"; };
 		15983C1B2592DA9700F72BDC /* ZQSubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQSubjectsViewController.swift; sourceTree = "<group>"; };
 		15A5BF6325AC5F230000A30F /* ZQOperatorCombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQOperatorCombineViewController.swift; sourceTree = "<group>"; };
 		15C010D925A3129200B9EAFA /* ZQOperatorTransformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQOperatorTransformViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				15C010D925A3129200B9EAFA /* ZQOperatorTransformViewController.swift */,
 				15A5BF6325AC5F230000A30F /* ZQOperatorCombineViewController.swift */,
+				155733AA25B13193000AC106 /* ZQOperatorFilterViewController.swift */,
 			);
 			path = "Operator - 操作符";
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				15EDFB7E258231F300537D31 /* ZQObserverViewController.swift in Sources */,
 				15C010DA25A3129200B9EAFA /* ZQOperatorTransformViewController.swift in Sources */,
 				15983C1C2592DA9700F72BDC /* ZQSubjectsViewController.swift in Sources */,
+				155733AB25B13193000AC106 /* ZQOperatorFilterViewController.swift in Sources */,
 				150799E025628E8C005DBEF5 /* AppDelegate.swift in Sources */,
 				15361D9F25805D3E008325FB /* RootViewController.swift in Sources */,
 				15CD6225259B2E2300D647EB /* BaseViewController.swift in Sources */,
