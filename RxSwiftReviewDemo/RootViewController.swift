@@ -23,6 +23,11 @@ fileprivate struct ListViewModel {
         ListModel(className: ZQOperatorCombineViewController.self,name: "Operator - 结合操作符"),
         ListModel(className: ZQOperatorFilterViewController.self,name: "Operator - 过滤操作符"),
         ListModel(className: ZQOperatorConditionalBooleanViewController.self,name: "Operator - 条件和布尔操作符"),
+        ListModel(className: ZQOperatorConnectableViewController.self,name: "Operator - 连接操作符"),
+        ListModel(className: ZQOperatorMathematicalAggregateViewController.self,name: "Operator - 算数聚合操作符"),
+        ListModel(className: ZQOperatorOtherViewController.self,name: "Operator - 其他操作符"),
+        ListModel(className: ZQDebugViewController.self,name: "debug 调试"),
+        ListModel(className: ZQErrorHandlingOperatorsViewController.self,name: "错误 调试"),
     ])
 }
 

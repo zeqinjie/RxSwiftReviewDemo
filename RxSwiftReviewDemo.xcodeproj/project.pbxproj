@@ -17,6 +17,11 @@
 		15079A0225628E8F005DBEF5 /* RxSwiftReviewDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15079A0125628E8F005DBEF5 /* RxSwiftReviewDemoUITests.swift */; };
 		15361D9F25805D3E008325FB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15361D9E25805D3D008325FB /* RootViewController.swift */; };
 		155733AB25B13193000AC106 /* ZQOperatorFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 155733AA25B13193000AC106 /* ZQOperatorFilterViewController.swift */; };
+		1588A08F25C93BAA005A3C8B /* ZQOperatorConnectableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588A08E25C93BAA005A3C8B /* ZQOperatorConnectableViewController.swift */; };
+		1588A09425C94633005A3C8B /* ZQOperatorMathematicalAggregateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588A09325C94633005A3C8B /* ZQOperatorMathematicalAggregateViewController.swift */; };
+		1588A0A525C94997005A3C8B /* ZQOperatorOtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588A0A425C94997005A3C8B /* ZQOperatorOtherViewController.swift */; };
+		1588A0AD25C94A98005A3C8B /* ZQErrorHandlingOperatorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588A0AC25C94A98005A3C8B /* ZQErrorHandlingOperatorsViewController.swift */; };
+		1588A0B525C94ACD005A3C8B /* ZQDebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588A0B425C94ACD005A3C8B /* ZQDebugViewController.swift */; };
 		15983C1C2592DA9700F72BDC /* ZQSubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15983C1B2592DA9700F72BDC /* ZQSubjectsViewController.swift */; };
 		15A5BF6425AC5F240000A30F /* ZQOperatorCombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A5BF6325AC5F230000A30F /* ZQOperatorCombineViewController.swift */; };
 		15C010DA25A3129200B9EAFA /* ZQOperatorTransformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C010D925A3129200B9EAFA /* ZQOperatorTransformViewController.swift */; };
@@ -63,6 +68,11 @@
 		15079A1F2562924C005DBEF5 /* Playground - Observable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Playground - Observable.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		15361D9E25805D3D008325FB /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		155733AA25B13193000AC106 /* ZQOperatorFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQOperatorFilterViewController.swift; sourceTree = "<group>"; };
+		1588A08E25C93BAA005A3C8B /* ZQOperatorConnectableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQOperatorConnectableViewController.swift; sourceTree = "<group>"; };
+		1588A09325C94633005A3C8B /* ZQOperatorMathematicalAggregateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQOperatorMathematicalAggregateViewController.swift; sourceTree = "<group>"; };
+		1588A0A425C94997005A3C8B /* ZQOperatorOtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQOperatorOtherViewController.swift; sourceTree = "<group>"; };
+		1588A0AC25C94A98005A3C8B /* ZQErrorHandlingOperatorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZQErrorHandlingOperatorsViewController.swift; sourceTree = "<group>"; };
+		1588A0B425C94ACD005A3C8B /* ZQDebugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZQDebugViewController.swift; sourceTree = "<group>"; };
 		15983C1B2592DA9700F72BDC /* ZQSubjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQSubjectsViewController.swift; sourceTree = "<group>"; };
 		15A5BF6325AC5F230000A30F /* ZQOperatorCombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQOperatorCombineViewController.swift; sourceTree = "<group>"; };
 		15C010D925A3129200B9EAFA /* ZQOperatorTransformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZQOperatorTransformViewController.swift; sourceTree = "<group>"; };
@@ -135,8 +145,9 @@
 			children = (
 				150799DF25628E8C005DBEF5 /* AppDelegate.swift */,
 				150799E125628E8C005DBEF5 /* SceneDelegate.swift */,
-				15361D9E25805D3D008325FB /* RootViewController.swift */,
 				15CD6224259B2E2300D647EB /* BaseViewController.swift */,
+				15361D9E25805D3D008325FB /* RootViewController.swift */,
+				1588A0AB25C94A7D005A3C8B /* 错误处理 */,
 				15C010D025A3116200B9EAFA /* Operator - 操作符 */,
 				15983C1A2592DA4E00F72BDC /* Subject 既是可监听序列也是观察者 */,
 				15EDFB7C2582317100537D31 /* Observer - 响应事件 */,
@@ -176,6 +187,15 @@
 			path = "Observable - 特征序列";
 			sourceTree = "<group>";
 		};
+		1588A0AB25C94A7D005A3C8B /* 错误处理 */ = {
+			isa = PBXGroup;
+			children = (
+				1588A0B425C94ACD005A3C8B /* ZQDebugViewController.swift */,
+				1588A0AC25C94A98005A3C8B /* ZQErrorHandlingOperatorsViewController.swift */,
+			);
+			path = "错误处理";
+			sourceTree = "<group>";
+		};
 		15983C1A2592DA4E00F72BDC /* Subject 既是可监听序列也是观察者 */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +211,9 @@
 				15A5BF6325AC5F230000A30F /* ZQOperatorCombineViewController.swift */,
 				155733AA25B13193000AC106 /* ZQOperatorFilterViewController.swift */,
 				15C7D6B325B84447002765B5 /* ZQOperatorConditionalBooleanViewController.swift */,
+				1588A08E25C93BAA005A3C8B /* ZQOperatorConnectableViewController.swift */,
+				1588A09325C94633005A3C8B /* ZQOperatorMathematicalAggregateViewController.swift */,
+				1588A0A425C94997005A3C8B /* ZQOperatorOtherViewController.swift */,
 			);
 			path = "Operator - 操作符";
 			sourceTree = "<group>";
@@ -470,7 +493,12 @@
 				15C010DA25A3129200B9EAFA /* ZQOperatorTransformViewController.swift in Sources */,
 				15983C1C2592DA9700F72BDC /* ZQSubjectsViewController.swift in Sources */,
 				155733AB25B13193000AC106 /* ZQOperatorFilterViewController.swift in Sources */,
+				1588A09425C94633005A3C8B /* ZQOperatorMathematicalAggregateViewController.swift in Sources */,
 				150799E025628E8C005DBEF5 /* AppDelegate.swift in Sources */,
+				1588A0A525C94997005A3C8B /* ZQOperatorOtherViewController.swift in Sources */,
+				1588A0AD25C94A98005A3C8B /* ZQErrorHandlingOperatorsViewController.swift in Sources */,
+				1588A0B525C94ACD005A3C8B /* ZQDebugViewController.swift in Sources */,
+				1588A08F25C93BAA005A3C8B /* ZQOperatorConnectableViewController.swift in Sources */,
 				15361D9F25805D3E008325FB /* RootViewController.swift in Sources */,
 				15C7D6B425B84447002765B5 /* ZQOperatorConditionalBooleanViewController.swift in Sources */,
 				15CD6225259B2E2300D647EB /* BaseViewController.swift in Sources */,

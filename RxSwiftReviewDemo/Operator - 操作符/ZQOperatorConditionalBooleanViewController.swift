@@ -18,12 +18,11 @@ class ZQOperatorConditionalBooleanViewController: BaseViewController {
         createTakeUntil()
         // Do any additional setup after loading the view.
     }
-    
 }
 
 // MARK: - 条件和布尔操作符
 extension ZQOperatorConditionalBooleanViewController {
-    func createAmb() {
+    fileprivate func createAmb() {
         print("-----createAmb------")
 //        amb
 //        当传入多个 Observables 到 amb 操作符时，它将取第一个发出元素或产生事件的 Observable，然后只发出它的元素。并忽略掉其他的 Observables。
@@ -46,10 +45,10 @@ extension ZQOperatorConditionalBooleanViewController {
         subject1.onNext(60)
         subject3.onNext(0)
         subject3.onNext(0)
-//        结果只会输出subject2
+//        结果只会输出subject2  1 2 3
     }
 
-    func createTakeWhile() {
+    fileprivate func createTakeWhile() {
         print("-----createTakeWhile------")
 //        takeWhile
 //        该方法依次判断 Observable 序列的每一个值是否满足给定的条件。 当第一个不满足条件的值出现时，它便自动完成。
@@ -60,7 +59,7 @@ extension ZQOperatorConditionalBooleanViewController {
 //        结果只会输出2，3
     }
     
-    func createTakeUntil() {
+    fileprivate func createTakeUntil() {
         print("-----createTakeUntil------")
 //        takeUntil
 //        除了订阅源 Observable 外，通过 takeUntil 方法我们还可以监视另外一个 Observable， 即 notifier。
@@ -87,7 +86,7 @@ extension ZQOperatorConditionalBooleanViewController {
 //        只会输出abcd
     }
     
-    func createskipWhile() {
+    fileprivate func createskipWhile() {
         print("-----createskipWhile------")
 //        skipWhile
 //        该方法用于跳过前面所有满足条件的事件。
@@ -99,7 +98,7 @@ extension ZQOperatorConditionalBooleanViewController {
 //        只会输出4，5，6
     }
 
-    func createskipUntil() {
+    fileprivate func createskipUntil() {
         print("-----createskipUntil------")
 //        skipUntil
 //        同上面的 takeUntil 一样，skipUntil 除了订阅源 Observable 外，通过 skipUntil方法我们还可以监视另外一个 Observable， 即 notifier 。
