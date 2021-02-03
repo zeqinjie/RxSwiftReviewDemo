@@ -39,6 +39,6 @@ class ZQDebugViewController: UIViewController {
             .subscribe(onNext: { print($0) })
             .disposed(by: disposeBag)
         
-//        print(RxSwift.Resources.total)
+        print(RxSwift.Resources.total)
     }
 }
