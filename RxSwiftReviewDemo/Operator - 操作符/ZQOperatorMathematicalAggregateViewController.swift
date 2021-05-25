@@ -9,11 +9,13 @@ import UIKit
 
 class ZQOperatorMathematicalAggregateViewController: BaseViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.toArray()
-        self.reduce()
-        self.concat()
+//        self.toArray()
+//        self.reduce()
+//        self.concat()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -57,13 +59,18 @@ extension ZQOperatorMathematicalAggregateViewController {
             .subscribe(onNext: { print($0) })
             .disposed(by: disposeBag)
         
-        subject2.onNext(2)
-        subject1.onNext(1)
-        subject1.onNext(1)
+        subject2.onNext(3)
+        subject1.onNext(4)
+        subject1.onNext(5)
         subject1.onCompleted()
 
         variable.accept(subject2)
-        subject2.onNext(2)
-//       结果 1,1,1,2,2
+        subject2.onNext(6)
+        subject1.onNext(7)
+//       结果 1,4,5,3,6
     }
+    
+    
+    
+    
 }

@@ -9,17 +9,19 @@ import UIKit
 
 class ZQOperatorOtherViewController: BaseViewController {
 
+    var deferredValue: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.delay()
-        self.delaySubscription()
-        self.materialize()
-        self.dematerialize()
-        self.timeout()
-        self.using()
+//        self.delay()
+//        self.delaySubscription()
+//        self.materialize()
+//        self.dematerialize()
+//        self.timeout()
+//        self.using()
+        self.deferred()
         // Do any additional setup after loading the view.
     }
-    
 
 }
 
@@ -112,6 +114,68 @@ extension ZQOperatorOtherViewController {
         }, observableFactory: { _ in return limited$ }
         )
         o.subscribe().disposed(by: disposeBag)
+    }
+    
+    fileprivate func deferred() {
+//        let val = deferredTest()
+        
+//        just1.subscribe(onNext: { val in
+//            print("just 2 -- \(val)")
+//        }).disposed(by: self.disposeBag)
+        
+//        let defered2 = Observable<Int>.deferred { [weak self] () -> Observable<Int> in
+//            guard let self = self else { return Observable<Int>.empty() }
+//            return  Observable<Int>.just(self.deferredTest())
+//        }
+        
+//        defered2.subscribe(onNext: { val in
+//            print("defered 2 -- \(val)")
+//        }).disposed(by: self.disposeBag)
+        
+        
+//        let just1 = Observable<Int>.just(0)
+//
+//        let defered1 = createVaule()
+//
+//        just1.subscribe(onNext: { [weak self] val in
+//            self?.deferredTest()
+//        }).disposed(by: self.disposeBag)
+//
+//
+//        defered1.subscribe(onNext: { val in
+//            print("defered 1 -- \(val)")
+//        }).disposed(by: self.disposeBag)
+        
+        
+        let just1 = Observable<Int>.just(0)
+        
+        /// deferred 作用：当它被订阅的时候，会执行闭包的回调以确保拿到的值不是最初初始化的值,而是当前闭包执行时候的值
+        let defered1 = Observable<Int>.deferred { [weak self]  in
+            guard let self = self else { return Observable<Int>.empty() }
+            return .just(self.deferredValue)
+        }
+        
+        just1.subscribe(onNext: { [weak self] val in
+            print("just1 -- subscribe")
+            print("just1 1 -- \(self?.deferredValue)")
+            self?.deferredTest()
+            print("just1 2 -- \(self?.deferredValue)")
+        }).disposed(by: self.disposeBag)
+        
+        defered1.subscribe(onNext: { val in
+            print("defered -- \(val)")
+        }).disposed(by: self.disposeBag)
+        
+    }
+    
+    fileprivate func createVaule() -> Observable<Int> {
+        let val = self.deferredTest()
+        return Observable<Int>.just(0).flatMap { _ in Observable.just(val) }
+    }
+    
+    fileprivate func deferredTest() -> Int {
+        self.deferredValue = deferredValue+1
+        return self.deferredValue
     }
 }
 
